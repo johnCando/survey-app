@@ -12,7 +12,7 @@
 const { configure } = require('quasar/wrappers');
 
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function ( ctx ) {
   return {
     eslint: {
       // fix: true,
@@ -61,30 +61,20 @@ module.exports = configure(function (/* ctx */) {
       },
 
       vueRouterMode: 'hash', // available values: 'hash', 'history'
-      // vueRouterBase,
-      // vueDevtools,
-      // vueOptionsAPI: false,
-
-      // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
-
-      // publicPath: '/',
-      // analyze: true,
-      // env: {},
-      // rawDefine: {}
-      // ignorePublicFolder: true,
-      // minify: false,
-      // polyfillModulePreload: true,
-      // distDir
-
-      // extendViteConf (viteConf) {},
-      // viteVuePluginOptions: {},
-
-      
-      // vitePlugins: [
-      //   [ 'package-name', { ..options.. } ]
-      // ]
+      env: {
+        BASE_URL: ctx.dev ? 'http://localhost:3000' : 'http://<PROD IP address>',
+        CREATOR_NAME: 'Henning Seip',
+        CREATOR_EMAIL: 'henning@candogram.com',
+        LINKEDIN: 'https://www.linkedin.com/in/henningseip/',
+        LINKEDIN_PIC: 'https://media.licdn.com/dms/image/C4E03AQFRsQZEbaNOrg/profile-displayphoto-shrink_400_400/0/1516190707653?e=1684368000&v=beta&t=Dysj_6P5bVewAfCQ0cDPyeBVX3wqCNP05CWHuyO6W2Y'
+      },
+      distDir: '../server/public' 
     },
-
+    htmlVariables: {
+      productName: 'BASE Student Job Poll App',
+      productDescription: 'The Bronx Aerospace High School Student Survey App collects job preferences from high school students.'
+    },
+ 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
@@ -106,7 +96,9 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
