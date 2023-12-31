@@ -99,7 +99,7 @@
               const data = {
                   SchoolID: this.selectedSchool === null ? null : this.selectedSchool.SchoolID
               }
-              fetch(process.env.BASE_URL + '/api/results',{
+              fetch(process.env.SERVER_URL + '/api/results',{
                   method: 'POST',
                   headers: {
                       Accept: 'application.json',
@@ -138,7 +138,7 @@
       },
       mounted() {
           // load school list for select drop down box
-          fetch(process.env.BASE_URL + '/api/school-list')
+          fetch(process.env.SERVER_URL + '/api/school-list')
           .then(response => response.json())
           .then(schoolList => {
               this.schoolList = [{SchoolID: null, SchoolName: 'all NYC schools'}].concat(schoolList)

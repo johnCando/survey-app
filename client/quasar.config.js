@@ -60,18 +60,17 @@ module.exports = configure(function ( ctx ) {
         node: 'node16'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       env: {
-        BASE_URL: ctx.dev ? 'http://localhost:3000' : 'http://<PROD IP address>',
+        SERVER_URL: ctx.dev ? 'http://localhost:3000' : 'http://<PROD IP address>',
         CREATOR_NAME: 'Henning Seip',
         CREATOR_EMAIL: 'henning@candogram.com',
-        LINKEDIN: 'https://www.linkedin.com/in/henningseip/',
-        LINKEDIN_PIC: 'https://media.licdn.com/dms/image/C4E03AQFRsQZEbaNOrg/profile-displayphoto-shrink_400_400/0/1516190707653?e=1684368000&v=beta&t=Dysj_6P5bVewAfCQ0cDPyeBVX3wqCNP05CWHuyO6W2Y'
+        LINKEDIN: 'https://www.linkedin.com/in/henningseip/'
       },
       distDir: '../server/public' 
     },
     htmlVariables: {
-      productName: 'BASE Student Job Poll App',
+      productName: 'BAHS Student Job Survey App',
       productDescription: 'The Bronx Aerospace High School Student Survey App collects job preferences from high school students.'
     },
  
