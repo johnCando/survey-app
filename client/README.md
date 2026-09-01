@@ -1,6 +1,6 @@
-# client
+# BAHS Student Job Survey (survey-app)
 
-This template should help get you started developing with Vue 3 in Vite.
+This app surveys students about their job interest
 
 ## Recommended IDE Setup
 

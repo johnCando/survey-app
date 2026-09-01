@@ -1,0 +1,1 @@
+import{Wt as e,dn as t,ln as n,sn as r}from"./index-BGkTHT6h.js";function i(){let i=n(!1);return e(()=>{window.requestAnimationFrame(()=>{i.value=!0})}),{ssrBootStyles:t(()=>i.value?void 0:{transition:`none !important`}),isBooted:r(i)}}export{i as t};
